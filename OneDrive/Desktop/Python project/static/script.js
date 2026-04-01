@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         inputOverlay.innerHTML = expression;
 
         try {
-            const response = await fetch('/validate', {
+            const response = await fetch('/api/validate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ expression })

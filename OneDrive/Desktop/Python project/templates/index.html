@@ -8,24 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="/static/styles.css">
     <!-- Vanta.js Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <link rel="icon" href="data:,">
 </head>
-<!-- Initializing as a dark, high-tech mode by default, complementing the requested Vanta background -->
 <body class="dark-mode">
-    <!-- Animated Network Background Container -->
     <div id="vanta-bg"></div>
-
     <div class="theme-toggle">
         <button id="theme-btn" aria-label="Toggle dark mode"><i class="fas fa-sun"></i></button>
     </div>
     
     <div class="app-container">
         <header class="app-header glass-panel">
-            <h1><i class="fas fa-network-wired text-gradient"></i> <span class="text-gradient">Parenthesis Network</span></h1>
+            <h1><i class="fas fa-network-wired text-gradient"></i> <span class="text-gradient">BracketBrain</span></h1>
             <p>High-performance validation of brackets, braces, and parentheses with visual data flow.</p>
         </header>
 
@@ -71,9 +68,7 @@
                         <div class="stack-layout">
                             <div class="steps-container display-panel">
                                 <h4>Operation Log</h4>
-                                <div class="steps-list" id="steps-list">
-                                    <!-- Steps injected dynamically -->
-                                </div>
+                                <div class="steps-list" id="steps-list"></div>
                             </div>
                             
                             <div class="stack-visualizer display-panel">
@@ -81,7 +76,6 @@
                                 <div class="stack-container" id="stack-container">
                                     <div class="stack-empty-msg" id="stack-empty">Stack is clean</div>
                                     <div class="stack-base"></div>
-                                    <!-- Stack items driven here -->
                                 </div>
                             </div>
                         </div>
@@ -95,9 +89,7 @@
                         <h3><i class="fas fa-history"></i> Command History</h3>
                         <button id="clear-history-btn" class="icon-btn" title="Clear History"><i class="fas fa-trash-can"></i></button>
                     </div>
-                    <ul class="history-list" id="history-list">
-                        <!-- History injected here -->
-                    </ul>
+                    <ul class="history-list" id="history-list"></ul>
                     <div class="empty-history" id="empty-history">
                         <i class="fas fa-server ghost-icon"></i>
                         <p>No past evaluations</p>
@@ -110,7 +102,6 @@
     <!-- Toast Notification -->
     <div id="toast" class="toast hidden">Status Message</div>
 
-    <!-- Embedded Scripts managed inside script.js for clean structure -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
